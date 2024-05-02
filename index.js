@@ -99,7 +99,12 @@ document.getElementById("booknow_btns").addEventListener("click", function() {
        document.getElementById("id4").textContent ="Add item"
        document.getElementById("id5").textContent ="Add item"
        document.getElementById("id6").textContent ="Add item"
-
+       document.getElementById("plus1").textContent ="+"
+       document.getElementById("plus2").textContent ="+"
+       document.getElementById("plus3").textContent ="+"
+       document.getElementById("plus4").textContent ="+"
+       document.getElementById("plus5").textContent ="+"
+       document.getElementById("plus6").textContent ="+"
         selectedItems = [];
         updateDisplay();
        
