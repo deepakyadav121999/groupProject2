@@ -1,0 +1,502 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+#showlist{
+display: none;
+}
+.header_main_container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+  
+}
+.left>p{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.user{
+ 
+    background-color: rgb(238, 235, 235);
+    padding: 15px;
+    border-radius: 10px;
+  color:  rgb(16, 143, 216);
+  
+}
+.right{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#btn{
+align-items: center;
+display: flex;
+justify-content: center;
+text-decoration: none;
+}
+
+.navbar{
+   
+    display: flex;
+   justify-content: space-between;
+   background-color: whitesmoke;
+height: 60px;
+align-items: center;
+padding: 10px;
+border-bottom: 0.1px solid rgb(243, 240, 240);
+}
+.middle{
+    display: flex;
+gap: 20px;
+}
+.hero_section{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  
+
+    padding: 20px;
+ 
+}
+.left_div{
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+padding: 30px;
+gap: 25px;
+
+}
+.color_change{
+    color: rgb(28, 185, 247);
+}
+#btn{
+    padding: 20px;
+    max-width: 300px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(28, 185, 247);
+    color: white;
+    font-size: large;
+    font-weight: 500;
+    cursor: pointer;
+}
+.right_div{
+    background-color: rgb(31, 117, 245);
+    width: 40%;
+    display: flex;
+    height: 80%;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+   
+   
+}
+.right_div>img{
+  border-radius: 10px;
+  width: 83%;
+}
+
+
+
+
+.lable_input{
+    display: none;
+
+}
+.sidebar{
+    position: absolute;
+    width: 250px;
+height: 100%;
+    background-color: rgb(56, 53, 59);
+  right: 0;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 30px;
+ transform: translateX(0px);
+ color: white;
+}
+#showlist:checked ~ .sidebar{
+        transform: translateX(250px);
+}
+
+.line{
+    width: 16px;
+    height: 4px;
+    background-color: black;
+}
+  
+
+
+ 
+
+@media (width <= 687px){
+    .container{
+        overflow-y: scroll;
+    }
+   .hero_section{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+ 
+   }
+   .right_div{
+    width: 100%;
+   }
+   .right_div>img{
+    width: 90%;
+   }
+   .left_div{
+    width: 90%;
+   }
+   .middle{
+    display: none;
+   }
+   .right>button{
+    display: block;
+   }
+   .lable_input{
+
+ display: flex;
+ flex-direction: column;
+ gap: 1px;
+}
+
+ 
+}
+.footer{
+    background-color: rgb(65, 154, 238);
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: x-large;
+}
+
+
+.container1{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+   justify-content: center;
+   /* background-color: blue; */
+}
+.container1_right{
+           width: 38%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+            padding: 20px;
+            gap: 15px;
+            height: 100%;
+        
+}
+.container1_list_price{
+    color: rgb(97, 45, 219);
+}
+.container1_left{
+    width: 38%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
+}
+.container1_heading{
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+      color: rgb(66, 65, 65);
+      gap: 10px;
+      border-bottom: 0.1px solid rgb(220, 224, 220);
+}
+.conatiner1_left_msg{
+    display: flex;
+    color: rgb(46, 72, 223);
+    font-weight: 550;
+    align-items: center;
+    gap: 5px;
+}
+.name_price_container1{
+    width: 100%;
+    display: flex;
+ 
+    gap: 10%;
+    padding: 10px;
+    align-items: center;
+}
+
+.name_price_list{
+    display: flex;
+    width: 60%;
+   justify-content: flex-start;
+    
+    align-items: center;
+    gap: 30px;
+    padding: 10px;
+    font-weight: 600;
+    color: rgb(87, 86, 86);
+}
+.Remove_add{
+    width: 30%;
+    display: flex;
+    background-color: rgb(241, 231, 233);
+    padding: 10px;
+    font-weight: 600;
+    color: rgb(44, 44, 44);
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    border-radius: 10px;
+    
+   
+}
+.container1_plus{
+    border: 2px solid grey;
+    padding: 4.9px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.total_price{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 700;
+}
+
+.booknow_section{
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+}
+.upper_section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+    border-radius: 5px;
+}
+
+.upper_section>input{
+    padding: 14px;
+    outline: none;
+    border: 0.1px solid rgb(226, 222, 222);
+   border-radius: 10px;
+
+}
+.down_section{
+    width: 100%;
+    display: flex;
+    
+}
+.left_down{
+    width: 50%;
+    
+}
+.left_down>input{
+    width: 98%;
+    padding: 14px;
+    outline: none;
+    border: 0.1px solid rgb(226, 222, 222);
+   border-radius: 10px;
+}
+.right_down{
+
+    width: 50%;
+}
+.right_down>input{
+    width: 98%;
+    padding: 14px;
+    outline: none;
+    border: 0.1px solid rgb(226, 222, 222);
+   border-radius: 10px;
+}
+.booknow_btn{
+    width: 67%;
+}
+.booknow_btn>button{
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    background-color: rgb(8, 61, 236);
+    font-weight: 600;
+    
+}
+.content_items{
+width: 80%;
+display: flex;
+justify-content: space-around;
+text-align: center;
+
+gap: 5px;
+
+}
+.content_item{
+width: 90%;
+display: flex;
+justify-content: space-between;
+text-align:center;
+
+gap: 5px;
+ 
+
+
+}
+.content_item>p{
+
+width: 30%;
+color: rgb(105, 100, 100);
+
+}
+#items_details{
+width: 80%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+
+}
+.content_items>p{
+padding: 1px;
+
+width: 40%;
+
+}
+.added_items{
+font-size: x-large;
+font-weight: 500;
+}
+.book_now{
+    width: 66%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    font-weight: 600;
+   }
+   .items_price{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   .big_txt{
+    font-size: x-large;
+    font-weight: 500;
+    color: rgb(49, 47, 47);
+   }
+   .container2{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    justify-content: space-around;
+   }
+  .container2_boxes{
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+  }
+  .container2_box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+   
+    align-items: center;
+  }
+  .container2_box>p{
+    color: rgb(97, 96, 96);
+  }
+  .container2_newsletter{
+    background-color: rgb(10, 137, 211);
+    display: flex;
+    padding: 10px;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+  }
+  .newsletter_box2{
+    height: 90%;
+    width: 40%;
+   
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+  }
+ 
+  .newsletter_box2>button{
+    padding: 10px;
+    border: none;
+    color:  rgb(10, 137, 211);
+    font-weight: 600;
+    width: 49%;
+  }
+  .newsletter_box3{
+    
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+  .newsletter_box3>input{
+    padding: 10px;
+    background-color: rgb(152, 184, 202);
+    border: none;
+    outline: none;
+   
+    width: 50%;
+  }
+  .newsletter_box1{
+    width: 20%;
+    
+    padding: 5px;
+    color: rgb(61, 59, 59);
+    color: white;
+  }
+  .container2_footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+
+  }
+  .container2_footer_box{
+   
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    padding: 10px;
+  }
+  #booknow_btns{
+    opacity: 0.5;
+  }
+  .green{
+    color: green;
+  }
+  .red{
+    color: red;
+  }
+  
