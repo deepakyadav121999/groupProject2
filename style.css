@@ -4,6 +4,28 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+.hoverp1,.hoverp2,.hoverp3,.hoverp4{
+padding: 2px;
+cursor: pointer;
+transition-duration: 1s;
+transition-delay: 10s;
+}
+.hoverp1:hover{
+    border-bottom: 2px solid rgb(5, 128, 243);
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hoverp2:hover{
+    border-bottom: 2px solid rgb(5, 128, 243);
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hoverp3:hover{
+    border-bottom: 2px solid rgb(5, 128, 243);
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hoverp4:hover{
+    border-bottom: 2px solid rgb(5, 128, 243);
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 #showlist{
 display: none;
 }
