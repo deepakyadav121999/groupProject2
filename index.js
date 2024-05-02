@@ -14,29 +14,34 @@ removeAddButtons.forEach(function(button, index) {
         var itemName = item.querySelector('.name_price_list p:first-child').textContent.trim();
         var itemPrice = parseFloat(item.querySelector('.container1_list_price').textContent.trim().replace('₹', ''));
 
+        var plusSign = button.querySelector('.container1_plus');
+
         if (buttonText === "Add item") {
-            button.querySelector('p:first-child').textContent = "Remove item";
+            button.querySelector('p:first-child').innerHTML = `<p class="red">Remove</p>`;
             item.classList.add('added');
             selectedItems.push({ name: itemName, price: itemPrice });
+            plusSign.innerHTML = `<p class="red">-</p>`;
+            plusSign.classList.add('red-plus'); // Add red color to the plus sign
             updateDisplay();
         } else {
             button.querySelector('p:first-child').textContent = "Add item";
             item.classList.remove('added');
-         
             selectedItems = selectedItems.filter(function(item) {
                 return item.name !== itemName;
             });
+            plusSign.textContent = '+';
+            plusSign.classList.remove('red-plus'); // Remove red color from the plus sign
             updateDisplay();
         }
     });
 });
 
-
 function updateButtonText() {
-    var addButtonTxt = selectedItems.length === 0 ? "Add item" : `Remove item`;
+    var addButtonTxt = selectedItems.length === 0 ? "Add item": "Remove" ;
     document.querySelectorAll('.additem').forEach(function(button) {
         button.querySelector('p:first-child').innerHTML = addButtonTxt;
     });
+ 
 }
 
 function updateDisplay() {
