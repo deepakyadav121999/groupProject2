@@ -1,11 +1,6 @@
-
 var removeAddButtons = document.querySelectorAll('.Remove_add');
-
 var itemsDetails = document.getElementById('items_details');
-
-
 var selectedItems = [];
-
 
 removeAddButtons.forEach(function(button, index) {
     button.addEventListener('click', function() {
@@ -13,7 +8,6 @@ removeAddButtons.forEach(function(button, index) {
         var item = button.closest('.name_price_container1');
         var itemName = item.querySelector('.name_price_list p:first-child').textContent.trim();
         var itemPrice = parseFloat(item.querySelector('.container1_list_price').textContent.trim().replace('₹', ''));
-
         var plusSign = button.querySelector('.container1_plus');
 
         if (buttonText === "Add item") {
@@ -37,18 +31,15 @@ removeAddButtons.forEach(function(button, index) {
 });
 
 function updateButtonText() {
-    var addButtonTxt = selectedItems.length === 0 ? "Add item": "Remove" ;
+    var addButtonTxt = selectedItems.length === 0 ? "Add item" : "Remove";
     document.querySelectorAll('.additem').forEach(function(button) {
         button.querySelector('p:first-child').innerHTML = addButtonTxt;
     });
- 
 }
 
 function updateDisplay() {
-   
     itemsDetails.innerHTML = '';
 
- 
     if (selectedItems.length === 0) {
         itemsDetails.innerHTML = `
             <div class="default_items" id="defult">
@@ -59,7 +50,6 @@ function updateDisplay() {
         `;
         document.getElementById("booknow_btns").style.opacity = "0.5";
     } else {
-
         selectedItems.forEach(function(item, index) {
             var itemElement = document.createElement('div');
             itemElement.classList.add('content_item');
@@ -74,7 +64,6 @@ function updateDisplay() {
     }
 
     updateTotal();
-
     updateButtonText();
 }
 
@@ -87,33 +76,48 @@ function updateTotal() {
 }
 
 document.getElementById("booknow_btns").addEventListener("click", function() {
-  
     if (selectedItems.length > 0) {
-     
         document.getElementById("message").innerHTML = `<p class="green">Email has Sent Successfully! </p>`;
 
      
-       document.getElementById("id1").textContent ="Add item"
-       document.getElementById("id2").textContent ="Add item"
-       document.getElementById("id3").textContent ="Add item"
-       document.getElementById("id4").textContent ="Add item"
-       document.getElementById("id5").textContent ="Add item"
-       document.getElementById("id6").textContent ="Add item"
-       document.getElementById("plus1").textContent ="+"
-       document.getElementById("plus2").textContent ="+"
-       document.getElementById("plus3").textContent ="+"
-       document.getElementById("plus4").textContent ="+"
-       document.getElementById("plus5").textContent ="+"
-       document.getElementById("plus6").textContent ="+"
+        document.getElementById("id1").textContent ="Add item"
+        document.getElementById("id2").textContent ="Add item"
+        document.getElementById("id3").textContent ="Add item"
+        document.getElementById("id4").textContent ="Add item"
+        document.getElementById("id5").textContent ="Add item"
+        document.getElementById("id6").textContent ="Add item"
+        document.getElementById("plus1").textContent ="+"
+        document.getElementById("plus2").textContent ="+"
+        document.getElementById("plus3").textContent ="+"
+        document.getElementById("plus4").textContent ="+"
+        document.getElementById("plus5").textContent ="+"
+        document.getElementById("plus6").textContent ="+"
+
+
+        var name = encodeURIComponent(document.getElementById('name').value);
+        var email = encodeURIComponent(document.getElementById('email').value);
+        var subject = encodeURIComponent("Laundry Service Booking Confirmation");
+        var body = encodeURIComponent("Hello,\n\nThank you for booking our laundry services!\n\nItems:\n");
+        
+        selectedItems.forEach(function(item, index) {
+            body += `${index + 1}. ${item.name} - ₹${item.price.toFixed(2)}\n`;
+        });
+
+        body += `\nTotal Amount: ${document.getElementById('total').textContent}\n\nRegards,\nYour Laundry Services Team`;
+
+        var mailtoLink = `mailto:dy444442210@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Open mail client with pre-filled email
+        window.location.href = mailtoLink;
+
+        // Clear form fields and reset selected items
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
         selectedItems = [];
         updateDisplay();
-       
-      
     } else {
-   
-        document.getElementById("message").innerHTML =`<p class="red">Add the items to the cart to book! </p>`;
+        document.getElementById("message").innerHTML = `<p class="red">Add items to the cart to book! </p>`;
     }
 });
-
 
 updateDisplay();
